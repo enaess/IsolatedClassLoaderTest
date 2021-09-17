@@ -1,0 +1,8 @@
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "net.sf.okapi:okapi-lib:1.41.0"
+    compileOnly files("../test.jar")
+}

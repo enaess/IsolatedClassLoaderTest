@@ -1,0 +1,11 @@
+import com.test.TestPlugin
+
+apply plugin: TestPlugin
+apply plugin: "java"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
