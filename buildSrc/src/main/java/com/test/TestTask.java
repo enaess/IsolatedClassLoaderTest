@@ -13,6 +13,11 @@ import org.gradle.workers.WorkerExecutor;
 import javax.inject.Inject;
 import java.io.File;
 
+
+/**
+ * Dummy task to spin up a number of WorkQueue items that would create a DocumentBuilder and parse an object embedded as
+ *   a resource in the test.jar file.
+ */
 public abstract class TestTask
         extends DefaultTask
 {
@@ -34,6 +39,10 @@ public abstract class TestTask
     @Inject
     public abstract WorkerExecutor getWorkerExecutor();
 
+    /*
+     * NOTE:
+     *    It seems to complete at a low number of iteration, but anything 10 or larger seems to trip the bug
+     */
     public TestTask() {
         getIterations().convention(48);
     }

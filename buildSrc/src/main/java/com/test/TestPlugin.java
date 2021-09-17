@@ -21,9 +21,6 @@ public class TestPlugin
         config.setCanBeConsumed(false);
         config.setCanBeResolved(true);
         config.getDependencies().add(
-                // project.getDependencies().create("net.sf.saxon:Saxon-HE:10.5"));
-                project.getDependencies().create("net.sf.okapi:okapi-lib:1.41.0"));
-        config.getDependencies().add(
                 project.getDependencies().create(project.files("../test.jar")));
 
         project.getPluginManager().withPlugin("java", p -> {
